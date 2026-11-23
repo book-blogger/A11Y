@@ -1,0 +1,52 @@
+/* All must be containded within the :root to work properly */
+:root {
+  /* Light */
+  &[data-theme="light"] {
+    color-scheme: light;
+    --color1: #222;
+    --color2: #fff;
+    --color3: #7FA34D;
+    --color4: #d5f09f;
+  }
+
+  /* Dark */
+  &[data-theme="dark"] {
+    color-scheme: dark;
+    --color1: #222;
+    --color2: #fff;
+    --color3: #7FA34D;
+    --color4: #d5f09f;
+  }
+
+  /* System, required to automatically work with device's color scheme */
+  &[data-theme="system"] {
+    color-scheme: light dark;
+
+   @media (prefers-color-scheme: light) {
+      --color1: #222;
+    --color2: #fff;
+    --color3: #7FA34D;
+    --color4: #d5f09f;
+    }
+
+   @media (prefers-color-scheme: dark) {
+    --color1: #222;
+    --color2: #fff;
+    --color3: #7FA34D;
+    --color4: #d5f09f;
+    }
+
+
+/* Font Sizes, specified body size will be the initial */
+ /* Large */
+  &.text-large body,
+  &.text-large button {
+    font-size: 20px;
+  }
+
+  /* Extra Large */
+  &.text-xlarge body,
+  &.text-xlarge button {
+    font-size: 28px;
+  }
+}
